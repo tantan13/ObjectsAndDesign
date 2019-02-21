@@ -1,5 +1,6 @@
 package GameAttributes
 
+import java.util.ArrayList
 import java.util.Scanner
 
 object Driver extends App {
@@ -20,13 +21,17 @@ object Driver extends App {
     }
   }
   val armiesDefault = 35
-  val turns = 1 to numPlayers
+  var turns = new ArrayList[Integer]();
+  for (i <- 1 to numPlayers) {
+    turns.add(i);
+  }
   var players = new Array[Player](numPlayers)
 
   for (i <- 1 to numPlayers) {
     Console.println(s"Name for Player $i")
     val name = keyboard.next()
-    players(i - 1) = new Player(name, turns(i - 1), armiesDefault - (5 * (numPlayers - 3)))
+    var turn = turns.remove(random.nextInt(turns.size()))
+    players(i - 1) = new Player(name, turn, armiesDefault - (5 * (numPlayers - 3)))
   }
 
   for (player <- players) Console.println(player.toString)
