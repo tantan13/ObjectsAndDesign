@@ -15,32 +15,37 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[String,Html,play.twirl.api.HtmlFormat.Appendable] {
+object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(title: String)(content: Html):play.twirl.api.HtmlFormat.Appendable = {
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*2.1*/("""
-"""),format.raw/*3.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>"""),_display_(/*6.17*/title),format.raw/*6.22*/("""</title>
+        <title>Risk</title>
+        <style>
+            body  """),format.raw/*6.19*/("""{"""),format.raw/*6.20*/("""
+                """),format.raw/*7.17*/("""background-color: #4863A0;
+                """),format.raw/*8.17*/("""}"""),format.raw/*8.18*/("""
+        """),format.raw/*9.9*/("""</style>
     </head>
     <body>
-        """),_display_(/*9.10*/content),format.raw/*9.17*/("""
-    """),format.raw/*10.5*/("""</body>
+        <h1>Hello Risk players</h1>
+        <h2>This is a fun game and we hope you enjoy!</h2>
+    </body>
 </html>
 """))
       }
     }
   }
 
-  def render(title:String,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(title)(content)
+  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
 
-  def f:((String) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (title) => (content) => apply(title)(content)
+  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
 
   def ref: this.type = this
 
@@ -49,11 +54,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 29 02:19:12 EDT 2019
-                  SOURCE: /Users/akshatsistla/Desktop/riskPlay/app/views/main.scala.html
-                  HASH: 26c78390636fc66019271894289d4075e47c7e46
-                  MATRIX: 733->1|857->32|884->33|970->93|995->98|1062->139|1089->146|1121->151
-                  LINES: 21->1|26->2|27->3|30->6|30->6|33->9|33->9|34->10
+                  DATE: Fri Mar 29 03:12:50 EDT 2019
+                  SOURCE: /Users/akshatsistla/Desktop/cs2340/CS2340SP19Team19/riskPlay/app/views/main.scala.html
+                  HASH: 7e709ca9fed51c3381752c154271d060cd7c0bb1
+                  MATRIX: 810->0|943->106|971->107|1015->124|1085->167|1113->168|1148->177
+                  LINES: 26->1|31->6|31->6|32->7|33->8|33->8|34->9
                   -- GENERATED --
               */
           

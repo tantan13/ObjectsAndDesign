@@ -9,7 +9,7 @@
 		extra-sbtVersion="1.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190329021850"/>
+		date="20190329024634"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="sbt-plugin">
 			<revision name="2.7.0" status="release" pubdate="20190130222201" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-scalaVersion="2.12" extra-sbtVersion="1.0" extra-info.apiURL="https://www.playframework.com/documentation/2.7.0/api/scala/index.html" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
@@ -463,7 +463,7 @@
 				<metadata-artifact status="no" details="" size="4140" time="0" location="/Users/akshatsistla/.ivy2/cache/org.ow2.asm/asm-commons/ivy-5.0.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.pom"/>
 				<caller organisation="com.github.jnr" name="jnr-ffi" conf="compile, runtime" rev="5.0.3" rev-constraint-default="5.0.3" rev-constraint-dynamic="5.0.3" callerrev="2.1.4"/>
 				<artifacts>
-					<artifact name="asm-commons" type="jar" ext="jar" status="successful" details="" size="41717" time="452" location="/Users/akshatsistla/.ivy2/cache/org.ow2.asm/asm-commons/jars/asm-commons-5.0.3.jar">
+					<artifact name="asm-commons" type="jar" ext="jar" status="no" details="" size="41717" time="0" location="/Users/akshatsistla/.ivy2/cache/org.ow2.asm/asm-commons/jars/asm-commons-5.0.3.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar"/>
 					</artifact>
 				</artifacts>
@@ -538,7 +538,7 @@
 				<metadata-artifact status="no" details="" size="11588" time="0" location="/Users/akshatsistla/.ivy2/cache/commons-io/commons-io/ivy-2.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom"/>
 				<caller organisation="com.spotify" name="docker-client" conf="default, compile, runtime, master" rev="2.5" rev-constraint-default="2.5" rev-constraint-dynamic="2.5" callerrev="8.14.3"/>
 				<artifacts>
-					<artifact name="commons-io" type="jar" ext="jar" status="successful" details="" size="208700" time="442" location="/Users/akshatsistla/.ivy2/cache/commons-io/commons-io/jars/commons-io-2.5.jar">
+					<artifact name="commons-io" type="jar" ext="jar" status="no" details="" size="208700" time="0" location="/Users/akshatsistla/.ivy2/cache/commons-io/commons-io/jars/commons-io-2.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar"/>
 					</artifact>
 				</artifacts>

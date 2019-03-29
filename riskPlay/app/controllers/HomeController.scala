@@ -7,6 +7,6 @@ class HomeController @Inject()(cc: ControllerComponents)
                         (implicit assetsFinder: AssetsFinder)
         extends AbstractController(cc) {
     def risk = Action {
-        Ok(views.html.risk())
+        Ok(views.html.main())
     }
 }

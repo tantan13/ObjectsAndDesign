@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/akshatsistla/Desktop/riskPlay/conf/routes
-// @DATE:Fri Mar 29 02:19:12 EDT 2019
+// @SOURCE:/Users/akshatsistla/Desktop/cs2340/CS2340SP19Team19/riskPlay/conf/routes
+// @DATE:Fri Mar 29 02:46:49 EDT 2019
 
 import play.api.mvc.Call
 
