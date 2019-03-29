@@ -1,1 +1,1 @@
-GET /risk controllers.HomeController.risk
+GET / controllers.HomeController.risk
