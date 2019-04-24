@@ -3,7 +3,8 @@
 @import riskGame.Territory
 
 @(player: Player)(terrForm: Form[forms.TerritoryForm])(occTerrs: List[Territory])(implicit messages: Messages)
-
+<body style="background-color:#00b7a9;">
+</body>
 <h1>@player.name: Choose Territory to move from</h1>
 
 @form(action = routes.FortifyController.moveTo) {

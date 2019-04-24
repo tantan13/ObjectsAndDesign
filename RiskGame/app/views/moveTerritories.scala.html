@@ -1,6 +1,7 @@
 @import helper._
 @(numArmiesList: List[Int])(armyForm: Form[forms.MoveArmiesForm])(implicit messages: Messages)
-
+<body style="background-color:#00b7a9;">
+</body>
 <h1>Choose number of armies to move</h1>
 @form(action = routes.AttackController.occupy) {
     @select(

@@ -2,7 +2,8 @@
 @import helper.{form, select}
 
 @(attacker: Player)(terrForm: Form[forms.TerritoryForm])(implicit messages: Messages)
-
+<body style="background-color:#00b7a9;">
+</body>
 <h1>@attacker.name: Choose Territory to attack from</h1>
 
 @form(action = routes.AttackController.getAdjTerr) {

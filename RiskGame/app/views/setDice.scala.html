@@ -2,7 +2,8 @@
 @import riskGame.Territory
 
 @(attacker: String)(defender: String)(diceForm: Form[forms.DiceForm])(attackDice: List[Int])(defenseDice: List[Int])(implicit messages: Messages)
-
+<body style="background-color:#00b7a9;">
+</body>
 <h1>@attacker: Select Dice</h1>
 
     @form(action = routes.AttackController.rollDice) {

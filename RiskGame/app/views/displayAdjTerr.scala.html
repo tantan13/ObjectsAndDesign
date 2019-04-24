@@ -2,7 +2,8 @@
 @import helper.{form, select}
 
 @(adjList: List[Territory])(attackTerr: Territory)(terrForm: Form[forms.TerritoryForm])(implicit messages: Messages)
-
+<body style="background-color:#00b7a9;">
+</body>
 <h1>Select territory to attack</h1>
 @form(action = routes.AttackController.toDice) {
     @select(
