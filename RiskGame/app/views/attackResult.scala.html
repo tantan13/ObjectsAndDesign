@@ -1,0 +1,8 @@
+@(attackOutcome: String)(implicit messages: Messages)
+
+<h1>Results: </h1>
+<p>
+    @attackOutcome
+</p>
+
+<a href="@routes.AttackController.findNext()">Continue</a>

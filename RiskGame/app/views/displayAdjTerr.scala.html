@@ -1,0 +1,13 @@
+@import riskGame.Territory
+@import helper.{form, select}
+
+@(adjList: List[Territory])(attackTerr: Territory)(terrForm: Form[forms.TerritoryForm])(implicit messages: Messages)
+
+<h1>Select territory to attack</h1>
+@form(action = routes.AttackController.toDice) {
+    @select(
+        field = terrForm("terr"),
+        options = adjList.map(terr => terr.name -> terr.name)
+    )
+    <input type="submit" value="submit" />
+}

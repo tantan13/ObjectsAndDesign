@@ -1,0 +1,16 @@
+@(playerForm: Form[forms.PlayerForm])(implicit messages: Messages)
+
+@import helper._
+
+<h1>Enter Players</h1>
+
+@form(action = routes.GameController.display) {
+    @inputText(playerForm("p1"))
+    @inputText(playerForm("p2"))
+    @inputText(playerForm("p3"))
+    @inputText(playerForm("p4"))
+    @inputText(playerForm("p5"))
+    @inputText(playerForm("p6"))
+
+    <input type="submit" value="submit">
+}

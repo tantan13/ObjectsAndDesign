@@ -1,0 +1,11 @@
+@import helper._
+@(numArmiesList: List[Int])(armyForm: Form[forms.MoveArmiesForm])(implicit messages: Messages)
+
+<h1>Choose number of armies to move</h1>
+@form(action = routes.FortifyController.move) {
+    @select(
+        field = armyForm("numArmies"),
+        options = numArmiesList.map(num => num.toString -> num.toString)
+    )
+    <input type="submit" value="submit" />
+}

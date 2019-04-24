@@ -1,0 +1,16 @@
+@import riskGame.Player
+@import helper._
+@(players: Array[Player])(territories: Html)
+
+<h1>List of Players</h1>
+<body>
+    <li>
+        @for(player <- players){
+            <ul>@player.toString</ul>
+        }
+    </li>
+
+    @territories
+</body>
+
+

@@ -1,0 +1,9 @@
+@import riskGame.RiskMap
+
+<h2>List of Territories</h2>
+
+<li>
+    @for(continent <- RiskMap.continents) {
+        <ul>@continent.toString</ul>
+    }
+</li>

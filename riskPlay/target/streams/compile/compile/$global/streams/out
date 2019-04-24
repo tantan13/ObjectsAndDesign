@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/akshatsistla/Desktop/cs2340/CS2340SP19Team19/riskPlay/app/views/risk.scala.html:1:12: no arguments allowed for nullary method apply: ()play.twirl.api.HtmlFormat.Appendable in object main[0m
-[0m[[0m[31merror[0m] [0m[0m<!-- @main("Risk") {[0m
-[0m[[0m[31merror[0m] [0m[0m           ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m

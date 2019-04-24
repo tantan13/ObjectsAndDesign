@@ -1,0 +1,21 @@
+@import riskGame.Player
+@(player: Player)(message: String)(assignedArmies: Boolean)
+
+<h1>@player.name's Turn</h1>
+<h1>Armies available: @player.armies</h1>
+@if(player.armies > 0) {
+    <a href="@controllers.routes.GameController.chooseTerr()">Assign Territories</a>
+}
+
+@if(assignedArmies) {
+    <a href="@controllers.routes.GameController.attack()">Attack</a>
+    <a href="@routes.GameController.fortify()">Fortify</a>
+    <a href="@controllers.routes.GameController.nextTurn()">End Turn</a>
+}
+<div>
+    <body>
+        @message
+    </body>
+</div>
+
+
