@@ -4,11 +4,39 @@
 @(adjList: List[Territory])(attackTerr: Territory)(terrForm: Form[forms.TerritoryForm])(implicit messages: Messages)
 <body style="background-color:#00b7a9;">
 </body>
+<style>
+div {
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+h2 {
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>
+<center>
+<div>
 <h1>Select territory to attack</h1>
+</div>
+<h2>
 @form(action = routes.AttackController.toDice) {
     @select(
-        field = terrForm("terr"),
+        field = terrForm("Territory"),
         options = adjList.map(terr => terr.name -> terr.name)
     )
     <input type="submit" value="submit" />
 }
+</h2>
+</center>

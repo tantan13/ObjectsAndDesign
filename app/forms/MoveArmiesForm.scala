@@ -8,7 +8,7 @@ case class MoveArmiesForm(numArmies: Int)
 object MoveArmiesForm {
   val form = Form(
     mapping(
-      "numArmies" -> number
+      "Number of Armies" -> number
     )(MoveArmiesForm.apply)(MoveArmiesForm.unapply)
   )
 }

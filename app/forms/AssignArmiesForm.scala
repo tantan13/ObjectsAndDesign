@@ -18,8 +18,8 @@ object AssignArmiesForm {
 
   val form = Form(
     mapping(
-      "terr" -> of[Territory],
-      "numArmies" -> number.verifying(validAmount)
+      "Territory" -> of[Territory],
+      "Number of Armies" -> number.verifying(validAmount)
     )(AssignArmiesForm.apply)(AssignArmiesForm.unapply)
   )
 

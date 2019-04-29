@@ -10,7 +10,7 @@ case class TerritoryForm(terr: Territory)
 object TerritoryForm {
   val form = Form(
     mapping(
-      "terr" -> of[Territory]
+      "Territory" -> of[Territory]
     )(TerritoryForm.apply)(TerritoryForm.unapply)
   )
 }

@@ -4,8 +4,33 @@
 @(attacker: String)(defender: String)(diceForm: Form[forms.DiceForm])(attackDice: List[Int])(defenseDice: List[Int])(implicit messages: Messages)
 <body style="background-color:#00b7a9;">
 </body>
-<h1>@attacker: Select Dice</h1>
+<style>
+div {
+    height: 200px;
+    width: 400px;
 
+    position: fixed;
+    top: 40%;
+    left: 49%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+h2 {
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 45%;
+    left: 49%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>
+<center>
+<div>
+<h1>@attacker: Select Dice</h1>
+</div>
+<h2>
     @form(action = routes.AttackController.rollDice) {
         @select(
             field = diceForm("aDice"),
@@ -18,6 +43,5 @@
 
         <input type="submit" value="submit" />
     }
-
-
-
+</h2>
+</center>

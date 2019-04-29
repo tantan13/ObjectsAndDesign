@@ -8,6 +8,9 @@ import riskGame.{Game, RiskMap, Territory}
 @Singleton
 class GameController @Inject()(cc: ControllerComponents)(implicit assetsFinder: AssetsFinder)
                       extends AbstractController(cc) with play.api.i18n.I18nSupport {
+  def starting = Action { implicit request =>
+    Ok(views.html.start())
+  }
   def showForm = Action { implicit request =>
     Ok(views.html.formTest(PlayerForm.playerForm))
   }

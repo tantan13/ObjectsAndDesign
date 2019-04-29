@@ -1,21 +1,47 @@
 @import riskGame.Player
 @(player: Player)(message: String)(assignedArmies: Boolean)
 
-<h1>@player.name's Turn</h1>
-<h1>Armies available: @player.armies</h1>
-@if(player.armies > 0) {
-    <a href="@controllers.routes.GameController.chooseTerr()">Assign Territories</a>
-}
+<style>
+div {
+    height: 200px;
+    width: 400px;
 
-@if(assignedArmies) {
-    <a href="@controllers.routes.GameController.attack()">Attack</a>
-    <a href="@routes.GameController.fortify()">Fortify</a>
-    <a href="@controllers.routes.GameController.nextTurn()">End Turn</a>
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
 }
+h2 {
+    height: 150px;
+    width: 400px;
+
+    position: fixed;
+    top: 58%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>
 <div>
+    <center>
+    <h1>@player.name's Turn</h1>
+    <h1>Armies available: @player.armies</h1>
+    @if(player.armies > 0) {
+        <a href="@controllers.routes.GameController.chooseTerr()">Assign Territories</a>
+    }
+
+    @if(assignedArmies) {
+        <a href="@controllers.routes.GameController.attack()">Attack</a>
+        <a href="@routes.GameController.fortify()">Fortify</a>
+        <a href="@controllers.routes.GameController.nextTurn()">End Turn</a>
+    }
     <body style="background-color:#00b7a9;">
-        @message
+        <h2>
+            @message
+        </h2>
     </body>
+    </center>
 </div>
 
 

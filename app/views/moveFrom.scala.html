@@ -5,12 +5,28 @@
 @(player: Player)(terrForm: Form[forms.TerritoryForm])(occTerrs: List[Territory])(implicit messages: Messages)
 <body style="background-color:#00b7a9;">
 </body>
-<h1>@player.name: Choose Territory to move from</h1>
+<style>
+div {
+    height: 200px;
+    width: 400px;
 
-@form(action = routes.FortifyController.moveTo) {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>
+<div>
+    <center>
+<h1>@player.name: Choose Territory to move from</h1>
+<h2>@form(action = routes.FortifyController.moveTo) {
     @select(
-        field = terrForm("terr"),
+        field = terrForm("Territory"),
         options = occTerrs.map(terr => terr.name -> terr.name)
     )
     <input type="submit" value="submit" />
 }
+</h2>
+</div>
+</center>

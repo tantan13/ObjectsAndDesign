@@ -2,18 +2,45 @@
 @import helper._
 @(armyForm: Form[forms.AssignArmiesForm])(player: Player)(implicit messages: Messages)
 
+<style>
+div {
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+h3 {
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 52%;
+    left: 57%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+</style>
+<div>
 <body style="background-color:#00b7a9;">
 </body>
+<center>
 <h1>Turn: @player.name</h1>
 <h2>Select your territory</h2>
-
+</center>
+</div>
+<h3>
 @form(action = routes.GameController.assignTerr) {
     @select(
-        field = armyForm("terr"),
+        field = armyForm("Territory"),
         options = player.getOccTerr.map((terr: Territory) => terr.name -> terr.name)
     )
-    @inputText(armyForm("numArmies"))
+    @inputText(armyForm("Number of Armies"))
 
     <input type="submit" value="submit">
 }
-
+</h3>

@@ -1,6 +1,6 @@
-@(winner: riskGame.Player)
 <body style="background-color:#00b7a9;">
 </body>
+
 <style>
 div {
     height: 200px;
@@ -13,10 +13,11 @@ div {
     margin-left: -200px;
 }
 </style>
-<div>
-    <center>
-<h1>@winner.name has won the game!</h1>
 
-<h2><a href="@routes.GameController.starting()">Click to Play Again</a><h2>
-</div>
+<div>
+<center>
+<h1>Welcome to Risk!</h1>
+<h2>Created by Rahul, Akshat, Heba, Gaetan, Napa</h2>
+<h2><a href="@routes.GameController.showForm()">Click to Start Game</a></h2>
 </center>
+</div>
