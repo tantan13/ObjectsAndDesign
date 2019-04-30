@@ -1,11 +1,12 @@
 package riskGame
 
 import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.Set
 
 class Player(val name: String, val turnNo: Int, var armies: Int) {
   def this(name: String) = this(name, 0, 0)
   var totalArmies: Int = armies
-  var occupiedConts: List[Continent] = List()
+  var occupiedConts: Set[Continent] = Set()
   val occupiedTerr: ListBuffer[Territory] = ListBuffer()
 
 

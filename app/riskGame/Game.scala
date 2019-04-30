@@ -85,5 +85,13 @@ object Game extends Attack {
     to.numArmies += numArmies
   }
 
+  def contOccupied(cont: Continent, player: Player): Boolean = {
+    var isOcc = true
+    for (territory <- cont.territories) {
+      if (!(territory.owner.equals(player))) isOcc = false
+    }
+    isOcc
+  }
+
 
 }
