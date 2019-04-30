@@ -2,8 +2,8 @@ package controllers
 
 import javax.inject._
 import play.api.mvc._
-import forms.{AssignArmiesForm, PlayerForm, TerritoryForm}
-import riskGame.{Game, RiskMap, Territory}
+import forms.{AssignArmiesForm, PlayerForm, AttackForm, FortifyForm}
+import riskGame.Game
 
 @Singleton
 class GameController @Inject()(cc: ControllerComponents)(implicit assetsFinder: AssetsFinder)
@@ -46,7 +46,7 @@ class GameController @Inject()(cc: ControllerComponents)(implicit assetsFinder: 
   }
 
   def attack = Action { implicit request =>
-    Ok(views.html.attackPage(Game.getCurrPlayer)(TerritoryForm.form))
+    Ok(views.html.attackPage(Game.getCurrPlayer)(AttackForm.terrForm))
   }
 
   def nextTurn = Action { implicit request =>
@@ -54,7 +54,7 @@ class GameController @Inject()(cc: ControllerComponents)(implicit assetsFinder: 
   }
 
   def fortify = Action { implicit request =>
-    Ok(views.html.moveFrom(Game.getCurrPlayer)(TerritoryForm.form)(Game.getCurrPlayer.getOccTerr))
+    Ok(views.html.moveFrom(Game.getCurrPlayer)(FortifyForm.terrForm)(Game.getCurrPlayer.getOccTerr))
   }
 
 }
