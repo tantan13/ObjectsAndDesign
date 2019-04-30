@@ -46,7 +46,7 @@ class GameController @Inject()(cc: ControllerComponents)(implicit assetsFinder: 
   }
 
   def attack = Action { implicit request =>
-    Ok(views.html.attackPage(Game.getCurrPlayer)(TerritoryForm.form))
+    Ok(views.html.attackPage(Game.getCurrPlayer)(AttackForm.form))
   }
 
   def nextTurn = Action { implicit request =>
