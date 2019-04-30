@@ -1,6 +1,6 @@
 package controllers
 
-import forms.{DiceForm, MoveArmiesForm, TerritoryForm}
+import forms.{DiceForm, MoveArmiesForm, TerritoryForm, AttackForm}
 import javax.inject.{Inject, Singleton}
 import play.api.mvc.{AbstractController, ControllerComponents}
 import riskGame.{Game, RiskMap, Territory}
@@ -13,7 +13,7 @@ class AttackController @Inject()(cc: ControllerComponents)(implicit assetsFinder
   var numDice: (Int, Int) = (-1, -1)
 
   def getAdjTerr = Action { implicit request =>
-    TerritoryForm.form.bindFromRequest.fold(
+    AttackForm.terrForm.bindFromRequest.fold(
       formError => {
         BadRequest(views.html.attackPage(Game.getCurrPlayer)(formError))
       },
