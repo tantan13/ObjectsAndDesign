@@ -1,9 +1,9 @@
 package forms
 
-import ImplicitFormBuilders.{TerritoryFormatter}
+import ImplicitFormBuilders.TerritoryFormatter
 import play.api.data.Form
 import play.api.data.Forms._
-import riskGame.{Territory}
+import riskGame.Territory
 
 case class TerritoryForm(terr: Territory)
 
