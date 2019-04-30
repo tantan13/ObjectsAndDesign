@@ -1,15 +1,15 @@
 package controllers
 
-import forms.{DiceForm, MoveArmiesForm, TerritoryForm, AttackForm}
+import forms.{AttackForm, DiceForm, MoveArmiesForm, TerritoryForm}
 import javax.inject.{Inject, Singleton}
 import play.api.mvc.{AbstractController, ControllerComponents}
-import riskGame.{Game, RiskMap, Territory}
+import riskGame.{Continent, Game, RiskMap, Territory}
 
 @Singleton
 class AttackController @Inject()(cc: ControllerComponents)(implicit assetsFinder: AssetsFinder)
                                       extends AbstractController(cc) with play.api.i18n.I18nSupport{
-  var fromTerr: Territory = new Territory("from")
-  var toTerr: Territory = new Territory("to")
+  var fromTerr: Territory = new Territory("from", new Continent("", 0))
+  var toTerr: Territory = new Territory("to", new Continent("", 0))
   var numDice: (Int, Int) = (-1, -1)
 
   def getAdjTerr = Action { implicit request =>
@@ -67,7 +67,11 @@ class AttackController @Inject()(cc: ControllerComponents)(implicit assetsFinder
       },
       correctForm => {
         Game.occupy(fromTerr, toTerr, correctForm.numArmies)
-        val message = s"${fromTerr.owner.name} has conquered ${toTerr.name}"
+        var message = s"${fromTerr.owner.name} has conquered ${toTerr.name}"
+        if (Game.contOccupied(toTerr.continent, fromTerr.owner)) {
+          fromTerr.owner.occupiedConts += toTerr.continent
+          message += s" and owns ${toTerr.continent.name}"
+        }
         Ok(views.html.turn(Game.getCurrPlayer)(message)(true))
       }
     )
