@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CS2340SP19Team19-build.iml" filepath="$PROJECT_DIR$/.idea/modules/CS2340SP19Team19-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RiskGame.iml" filepath="$PROJECT_DIR$/.idea/modules/RiskGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RiskGame-build.iml" filepath="$PROJECT_DIR$/.idea/modules/RiskGame-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cs2340sp19team19.iml" filepath="$PROJECT_DIR$/.idea/modules/cs2340sp19team19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/.idea/modules/cs2340sp19team19-build.iml" filepath="$PROJECT_DIR$/.idea/modules/.idea/modules/cs2340sp19team19-build.iml" />
     </modules>
   </component>
 </project>

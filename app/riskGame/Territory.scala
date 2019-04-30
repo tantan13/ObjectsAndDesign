@@ -1,7 +1,7 @@
 package riskGame
 
-class Territory(val name: String, var numArmies: Int) {
-  def this(name: String) = this(name, 0)
+class Territory(val name: String, var numArmies: Int, val continent: Continent) {
+  def this(name: String, continent: Continent) = this(name, 0, continent)
   var owner: Player = new Player("player")
 
   override def toString: String = s"Territory: $name, Armies: $numArmies, Owner: ${owner.name}"

@@ -1,6 +1,8 @@
 package riskGame
 
-class Continent(val name: String, val bonus: Int, val territories: List[Territory]) {
+class Continent(val name: String, val bonus: Int) {
+  var territories: List[Territory] = Nil
+
   override def toString: String = s"Continent: $name \n" + getTerritories
 
   def getTerritories: String = {
