@@ -2,46 +2,59 @@
 @(player: Player)(message: String)(assignedArmies: Boolean)
 
 <style>
-div {
-    height: 200px;
-    width: 400px;
-
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+input.MyButton {
+    width: 170px;
+    padding: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 100%;
+    background: #000000;
+    color: #fff;
+    border: 1px solid #3366cc;
+    border-radius: 10px;
 }
-h2 {
-    height: 150px;
-    width: 400px;
+input.MyButton:hover {
+    color: #ffff00;
+    background: #000;
+    border: 1px solid #fff;
+}
 
-    position: fixed;
-    top: 58%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+div {
+  background-color: lightgrey;
+  width: 125px;
+  border: 10px blue;
+  padding: 10px;
+  margin: 20px;
 }
 </style>
-<div>
-    <center>
+<center>
     <h1>@player.name's Turn</h1>
     <h1>Armies available: @player.armies</h1>
-    @if(player.armies > 0) {
-        <a href="@controllers.routes.GameController.chooseTerr()">Assign Territories</a>
-    }
 
-    @if(assignedArmies) {
-        <a href="@controllers.routes.GameController.attack()">Attack</a>
-        <a href="@routes.GameController.fortify()">Fortify</a>
-        <a href="@controllers.routes.GameController.nextTurn()">End Turn</a>
-    }
+        @if(player.armies > 0) {
+            <input class="MyButton" type="button" value="Assign Territories" onclick= "window.location.href='@controllers.routes.GameController.chooseTerr()'"/>
+        }
+
+        @if(assignedArmies) {
+            <input class="MyButton" type="button" value="Attack" onclick= "window.location.href='@controllers.routes.GameController.attack()'"/>
+            <input class="MyButton" type="button" value="Fortify" onclick= "window.location.href='@controllers.routes.GameController.fortify()'"/>
+            <input class="MyButton" type="button" value="End Turn" onclick= "window.location.href='@controllers.routes.GameController.nextTurn()'"/>
+        }
+
     <body style="background-color:#00b7a9;">
-        <h2>
+        <h1>
             @message
-        </h2>
+        </h1>
     </body>
-    </center>
-</div>
+    <h3>
+        <img src="https://www.alternatehistory.com/forum/attachments/blank-risk-png.30809/" alt="Map" width="800" height="500" align="left">
+        <div>
+            Alaska <br> Owner: 1 <br> Armies: 0
+        </div>
+        <div>
+            Alaska2 <br> Owner: 1 <br> Armies: 0
+        </div>
+    </h3>
 
+</center>
 
