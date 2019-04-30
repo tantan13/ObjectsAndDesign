@@ -10,13 +10,13 @@ object RiskMap {
 
   val alaska = new Territory("Alaska", northAmerica)
   val alberta = new Territory("Alberta", northAmerica)
-  val centralAmerica = new Territory("Central America", northAmerica)
-  val eastUS = new Territory("Eastern United States", northAmerica)
+  val centralAmerica = new Territory("C. America", northAmerica)
+  val eastUS = new Territory("Eastern US", northAmerica)
   val greenland = new Territory("Greenland", northAmerica)
-  val northwest = new Territory("Northwest Territory", northAmerica)
+  val northwest = new Territory("NW Territory", northAmerica)
   val ontario = new Territory("Ontario", northAmerica)
   val quebec = new Territory("Quebec", northAmerica)
-  val westUS = new Territory("Western United States", northAmerica)
+  val westUS = new Territory("Western US", northAmerica)
   val nAmericaTerr: List[Territory] = List(alaska, alberta, centralAmerica, eastUS,
                                                 greenland, northwest, ontario, quebec, westUS)
   northAmerica.territories = nAmericaTerr
@@ -30,11 +30,11 @@ object RiskMap {
 
   val greatBritain = new Territory("Great Britain", europe)
   val iceland = new Territory("Iceland", europe)
-  val nEurope = new Territory("Northern Europe", europe)
+  val nEurope = new Territory("N. Europe", europe)
   val scandinavia = new Territory("Scandinavia", europe)
-  val sEurope = new Territory("Southern Europe", europe)
+  val sEurope = new Territory("S. Europe", europe)
   val ukraine = new Territory("Ukraine", europe)
-  val wEurope = new Territory("Western Europe", europe)
+  val wEurope = new Territory("W. Europe", europe)
   val euroTerr: List[Territory] = List(greatBritain, iceland, nEurope, scandinavia, sEurope, ukraine, wEurope)
   europe.territories = euroTerr
 
@@ -63,10 +63,10 @@ object RiskMap {
                                                 midEast, mongolia, siam, siberia, ural, yakutsk)
   asia.territories = asiaTerr
 
-  val eAustralia = new Territory("Eastern Australia", australia)
+  val eAustralia = new Territory("E. Australia", australia)
   val indonesia = new Territory("Indonesia", australia)
   val newGuinea = new Territory("New Guinea", australia)
-  val wAustralia = new Territory("Western Australia", australia)
+  val wAustralia = new Territory("W. Australia", australia)
   val australiaTerr: List[Territory] = List(eAustralia, indonesia, newGuinea, wAustralia)
   australia.territories = australiaTerr
 
