@@ -1,4 +1,5 @@
 @import riskGame.Player
+@import riskGame.RiskMap
 @(player: Player)(message: String)(assignedArmies: Boolean)
 
 <style>
@@ -19,12 +20,13 @@ input.MyButton:hover {
     border: 1px solid #fff;
 }
 
-span {
-  background-color: lightgrey;
-  width: 125px;
-  border: 10px blue;
-  padding: 10px;
-  margin: 20px;
+span.a {
+  display: inline-block;
+  width: 100px;
+  height: 75px;
+  padding: 0px;
+  border: 5px solid blue;
+  background-color: lightgray;
 }
 </style>
 <center>
@@ -46,15 +48,18 @@ span {
             @message
         </h1>
     </body>
-    <h3>
-        <img src="https://www.alternatehistory.com/forum/attachments/blank-risk-png.30809/" alt="Map" width="800" height="500" align="left">
-        <span>
-            Alaska <br> Owner: 1 <br> Armies: 0
-        </span>
-        <span>
-            Alaska2 <br> Owner: 1 <br> Armies: 0
-        </span>
-    </h3>
+    <p>
+        <img src="https://www.alternatehistory.com/forum/attachments/blank-risk-png.30809/" alt="Map" width="850" height="600" align="left">
+        @for(continent <- RiskMap.continents) {
+            <h3>@continent.name :</h3>
+            @for(Territory <- continent.territories) {
+                <span class = "a">
+                    @Territory.name <br> Owner: @Territory.owner.name <br> Armies: @Territory.numArmies
+                </span>
+            }
+            <br>
+        }
+    </p>
 
 </center>
 
