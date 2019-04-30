@@ -1,5 +1,0 @@
-package Gameplay
-
-class Game {
-
-}

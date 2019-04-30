@@ -1,9 +1,9 @@
 package controllers
 
-import forms.{MoveArmiesForm, TerritoryForm}
+import forms.{MoveArmiesForm, TerritoryForm, FortifyForm}
 import javax.inject.Inject
 import play.api.mvc.{AbstractController, ControllerComponents}
-import riskGame.{Game, Player, RiskMap, Territory}
+import riskGame.{Game, RiskMap, Territory}
 
 class FortifyController @Inject()(cc: ControllerComponents)(implicit assetsFinder: AssetsFinder)
                 extends AbstractController(cc) with play.api.i18n.I18nSupport{
@@ -12,7 +12,7 @@ class FortifyController @Inject()(cc: ControllerComponents)(implicit assetsFinde
   var toTerr = new Territory("to")
 
   def moveTo = Action { implicit request =>
-    TerritoryForm.form.bindFromRequest.fold(
+    FortifyForm.terrForm.bindFromRequest.fold(
       formError => {
         Ok(views.html.moveFrom(Game.getCurrPlayer)(formError)(Game.getCurrPlayer.getOccTerr))
       },

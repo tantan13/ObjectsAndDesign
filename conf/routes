@@ -15,7 +15,7 @@
 
 GET     /                           controllers.GameController.starting
 
-GET	/playerInput		    controllers.GameController.showForm
+GET	    /playerInput		        controllers.GameController.showForm
 
 POST    /playerConfig               controllers.GameController.display
 

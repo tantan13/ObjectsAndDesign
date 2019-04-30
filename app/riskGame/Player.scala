@@ -35,7 +35,7 @@ class Player(val name: String, val turnNo: Int, var armies: Int) {
     case _ => false
   }
 
-  def getOccTerr: List[Territory] = occupiedTerr.toList
+  def getOccTerr: List[Territory] = occupiedTerr.toList.filter(_.numArmies > 1)
 
   def isOut: Boolean = totalArmies <= 0
 
