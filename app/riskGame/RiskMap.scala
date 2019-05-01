@@ -101,7 +101,7 @@ object RiskMap {
     nAfrica -> List(congo, eAfrica, egypt, wEurope),
     sAfrica -> List(congo, eAfrica, madagascar),
     afghanistan -> List(china, india, midEast, ural, ukraine),
-    china -> List(afghanistan, india, siam, mongolia, ural),
+    china -> List(afghanistan, india, siam, mongolia, ural, siberia),
     india -> List(afghanistan, china, midEast, siam),
     irkutsk -> List(kamchatka, mongolia, siberia, yakutsk),
     japan -> List(kamchatka, mongolia),

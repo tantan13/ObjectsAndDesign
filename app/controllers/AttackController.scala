@@ -50,12 +50,11 @@ class AttackController @Inject()(cc: ControllerComponents)(implicit assetsFinder
 
   def findNext = Action { implicit request =>
     if (toTerr.isConquered) {
-      if (toTerr.owner.isOut) {
-        Game.removePlayer(toTerr.owner)
-        if (Game.gameOver) Ok(views.html.gameOver(Game.getCurrPlayer))
-      }
       toTerr.owner.occupiedTerr -= toTerr
       fromTerr.owner.occupiedTerr += toTerr
+      if (toTerr.owner.isOut) {
+        Game.removePlayer(toTerr.owner)
+      }
       Ok(views.html.moveTerritories((1 until fromTerr.numArmies).toList)(MoveArmiesForm.form))
     } else Ok(views.html.turn(Game.getCurrPlayer)(s"${fromTerr.owner.name} continues")(true))
   }
@@ -72,7 +71,8 @@ class AttackController @Inject()(cc: ControllerComponents)(implicit assetsFinder
           fromTerr.owner.occupiedConts += toTerr.continent
           message += s" and owns ${toTerr.continent.name}"
         }
-        Ok(views.html.turn(Game.getCurrPlayer)(message)(true))
+        if (Game.gameOver) Ok(views.html.gameOver(Game.getCurrPlayer))
+        else Ok(views.html.turn(Game.getCurrPlayer)(message)(true))
       }
     )
   }
