@@ -45,11 +45,11 @@ trait Attack {
   }
 
   private def getAttackMsg(attackTerr: Territory, defenseTerr: Territory, losses: (Int, Int), attackRolls: List[Int], defenseRolls: List[Int]): String = {
-    val attackStats = s"${attackTerr.owner.name} Rolls:  ${attackRolls.toString.substring(5, attackRolls.toString.length - 1)}  Army Loss: ${losses._1}\n"
-    val defenseStats = s"${defenseTerr.owner.name} Rolls:  ${defenseRolls.toString.substring(5, defenseRolls.toString.length - 1)}  Army Loss: ${losses._2}\n"
-    val attackTerrStats = s"${attackTerr.name} Armies Left: ${attackTerr.numArmies}\n"
-    val defenseTerrStats = s"${defenseTerr.name} Armies Left: ${defenseTerr.numArmies}\n"
-    attackStats + defenseStats + attackTerrStats + defenseTerrStats
+    attackTerr.owner.name + " rolled " + attackRolls.toString.substring(5, attackRolls.toString.length - 1) +
+    " and lost " + losses._1 + " army/armies since "+ defenseTerr.owner.name + " rolled " +
+    defenseRolls.toString.substring(5, defenseRolls.toString.length - 1) + " and lost " + losses._2 + " army/armies. \n" +
+    " " + attackTerr.name + " has " + attackTerr.numArmies + " army/armies left and " + defenseTerr.name +
+    " has " + defenseTerr.numArmies + " army/armies left."
   }
 
 

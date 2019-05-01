@@ -1,4 +1,5 @@
 @import riskGame.Player
+@import riskGame.RiskMap
 @import helper.{form, select}
 
 @(attacker: Player)(terrForm: Form[forms.AttackForm])(implicit messages: Messages)
@@ -6,26 +7,6 @@
 </body>
 
 <style>
-div {
-    height: 200px;
-    width: 400px;
-
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
-}
-h2 {
-    height: 200px;
-    width: 400px;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
-}
 .button {
     width: 200px;
     padding: 20px;
@@ -41,18 +22,36 @@ h2 {
     color: #ffff00;
     background: #000;
 }
+span.a {
+  display: inline-block;
+  width: 100px;
+  height: 75px;
+  padding: 0px;
+  border: 5px solid blue;
+  background-color: lightgray;
+}
 </style>
 <center>
-<div>
 <h1>@attacker.name: Choose Territory to attack from</h1>
-</div>
 <h2>
 @form(action = routes.AttackController.getAdjTerr) {
     @select(
         field = terrForm("Territory"),
         options = attacker.getOccTerr.filter(_.numArmies >= 2).map(terr => terr.name -> terr.name)
     )
-    <input type="submit" value="submit" />
+    <h3><button class= "button" type="submit" value="Submit">Submit</button></h3>
 }
 </h2>
+<p>
+        <img src="https://www.alternatehistory.com/forum/attachments/blank-risk-png.30809/" alt="Map" width="850" height="600" align="left">
+        @for(continent <- RiskMap.continents) {
+            <h3>@continent.name :</h3>
+            @for(Territory <- continent.territories) {
+                <span class = "a">
+                    @Territory.name <br> Owner: @Territory.owner.name <br> Armies: @Territory.numArmies
+                </span>
+            }
+            <br>
+        }
+    </p>
 </center>

@@ -1,20 +1,33 @@
 @import helper._
+@import riskGame.RiskMap
 @(numArmiesList: List[Int])(armyForm: Form[forms.MoveArmiesForm])(implicit messages: Messages)
 <body style="background-color:#00b7a9;">
 </body>
 <style>
-div {
-    height: 200px;
-    width: 400px;
-
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+.button {
+    width: 200px;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 100%;
+    background: #000000;
+    color: #fff;
+    border: 1px solid #3366cc;
+    border-radius: 10px;
+}
+.button:hover {
+    color: #ffff00;
+    background: #000;
+}
+span.a {
+  display: inline-block;
+  width: 100px;
+  height: 75px;
+  padding: 0px;
+  border: 5px solid blue;
+  background-color: lightgray;
 }
 </style>
-<div>
     <center>
 <h1>Choose number of armies to move</h1>
 <h2>@form(action = routes.FortifyController.move) {
@@ -22,8 +35,19 @@ div {
         field = armyForm("Number of Armies"),
         options = numArmiesList.map(num => num.toString -> num.toString)
     )
-    <input type="submit" value="submit" />
+    <h3><button class= "button" type="submit" value="Submit">Submit</button></h3>
 }
 </h2>
-</div>
+<p>
+        <img src="https://www.alternatehistory.com/forum/attachments/blank-risk-png.30809/" alt="Map" width="850" height="600" align="left">
+        @for(continent <- RiskMap.continents) {
+            <h3>@continent.name :</h3>
+            @for(Territory <- continent.territories) {
+                <span class = "a">
+                    @Territory.name <br> Owner: @Territory.owner.name <br> Armies: @Territory.numArmies
+                </span>
+            }
+            <br>
+        }
+    </p>
 </center>
